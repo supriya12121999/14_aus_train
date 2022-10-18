@@ -1,0 +1,55 @@
+"""mynewproject URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path,re_path
+from myweb.views import *
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    
+    path('',home,name='home'),
+    
+    path('user/auth/',user_auth,name='auth'),
+    
+    path('register/form/',Register_Form,name='reg'),
+    
+    #path('',index,name='first_page'),
+    path('logout/',logout_user,name='logout'),
+    
+    re_path('^post_detail/(\d+)/$',detail,name='detail'),
+    
+    path('create_post/',myform,name='form'),
+    
+    re_path('^delete_post/(\d+)/$',delete_post,name='delete'),
+    
+    re_path('^edit_post/(\d+)/$',edit_post,name='edit')
+   
+    
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+

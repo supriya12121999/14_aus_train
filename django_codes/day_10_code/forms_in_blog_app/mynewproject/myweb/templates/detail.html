@@ -1,0 +1,26 @@
+<!-- templates/detail.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="post-entry">
+<h2>{{ record.title|title }}</h2><br>
+<b>Created by:{{ record.author }} | {{ record.created_on}}</b><br><br>
+
+{{ record.text }}<br><br>
+</div>
+<input type="button" onclick="location.href='{% url 'delete' record.id %}'" value="Delete" />
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+

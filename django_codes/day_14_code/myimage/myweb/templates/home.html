@@ -1,0 +1,12 @@
+<html>
+<body>
+<h2>Display data</h2><br>
+
+{% for i in d %}
+Title : {{i.title}}<br>
+<img src="{{i.img.url}}" width='200px' height='200px'/>
+{% endfor %}
+
+<a href="{% url 'index' %}">click here for creating data</a>
+</body>
+</html>

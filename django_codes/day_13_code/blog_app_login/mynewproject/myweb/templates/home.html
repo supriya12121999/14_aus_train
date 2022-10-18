@@ -1,0 +1,30 @@
+<!-- templates/home.html -->
+
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1>Hi ...{{request.user.first_name}} ! You are Logged in..</h1>
+{% endif %}
+
+{% for post in d %}
+<div class="post-entry">
+<h2><a href="{% url 'detail' post.id %}">{{ post.title|title }}</a></h2><br>
+<b>Created by:{{ post.author.first_name }} | {{ post.created_on}}</b><br><br>
+
+{{ post.text }}<br>
+</div>
+{% endfor %}
+{% endblock content %}
+
+
+
+
+
+
+
+
+

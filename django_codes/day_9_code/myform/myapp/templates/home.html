@@ -1,0 +1,17 @@
+<html>
+<body>
+
+<form action='' method='post'>{% csrf_token %}
+{{f.as_p}}
+<input type='submit' value='submit' />
+</form>
+
+<h2>display data</h2>
+
+{% for i in data %}
+first name : {{i.fname}}<br>
+last name : {{i.lname}}<br><br>
+
+{% endfor %}
+</body>
+</html>

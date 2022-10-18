@@ -1,0 +1,23 @@
+<!-- templates/home.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% for post in d %}
+<div class="post-entry">
+<h2><a href="{% url 'detail' post.id %}">{{ post.title|title }}</a></h2><br>
+<b>Created by:{{ post.author }} | {{ post.created_on}}</b><br><br>
+
+{{ post.text }}<br>
+</div>
+{% endfor %}
+{% endblock content %}
+
+
+
+
+
+
+
+
+
